@@ -21,10 +21,8 @@ struct hash<rai::uint256_union>
 	}
 };
 }
-struct MDB_val;
 namespace rai
 {
-
 /**
  * A key pair. The private key is generated from the random pool, or passed in
  * as a hex string. The public key is derived using ed25519.
@@ -37,8 +35,6 @@ public:
 	rai::public_key pub;
 	rai::raw_key prv;
 };
-
-std::unique_ptr<rai::block> deserialize_block (MDB_val const &);
 
 /**
  * Latest information about an account
