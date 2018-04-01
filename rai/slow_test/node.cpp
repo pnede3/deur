@@ -112,7 +112,7 @@ TEST (ledger, deep_account_compute)
 	rai::ledger ledger (store);
 	rai::genesis genesis;
 	rai::transaction transaction (store.environment, nullptr, true);
-	genesis.initialize (transaction, store);
+	store.initialize (transaction, genesis);
 	rai::keypair key;
 	auto balance (rai::genesis_amount - 1);
 	rai::send_block send (genesis.hash (), key.pub, balance, rai::test_genesis_key.prv, rai::test_genesis_key.pub, 0);

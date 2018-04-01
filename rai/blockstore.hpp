@@ -48,6 +48,7 @@ class block_store
 public:
 	block_store (bool &, boost::filesystem::path const &, int lmdb_max_dbs = 128);
 
+	void initialize (MDB_txn *, rai::genesis const &);
 	MDB_dbi block_database (rai::block_type);
 	void block_put_raw (MDB_txn *, MDB_dbi, rai::block_hash const &, MDB_val);
 	void block_put (MDB_txn *, rai::block_hash const &, rai::block const &, rai::block_hash const & = rai::block_hash (0));
