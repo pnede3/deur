@@ -157,7 +157,6 @@ public:
 	void serialize (rai::stream &) const;
 	bool deserialize (rai::stream &);
 	bool operator== (rai::block_info const &) const;
-	rai::mdb_val val () const;
 	rai::account account;
 	rai::amount balance;
 };
